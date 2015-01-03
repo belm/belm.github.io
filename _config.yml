@@ -9,3 +9,5 @@ github_username:  belm@vip.qq.com
 
 # Build settings
 markdown: kramdown
+source:      _source
+destination: _deploy
