@@ -1,6 +1,3 @@
-belm.github.io
-==============
-#在路上的技术笔记
 
 # 常用Mac软件
 ##办公软件
@@ -29,6 +26,8 @@ belm.github.io
 ##文件同步
 * 百度云盘
 * dropbox
+* google drive
+* iCloud Drive
 
 ##其他
 * AppCleaner
