@@ -58,14 +58,6 @@
 * GoAgentX
 * Tunnelblick
 
-#github pages ip
-##官方提供（较慢）
-* 192.30.252.153
-* 192.30.252.154
-##速度比较快
-* 103.245.222.133
-* 103.245.222.134
-
 #gem国内安装失败
 ##使用淘宝RubyGems镜像 
 * 网址：https://ruby.taobao.org/
