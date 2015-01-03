@@ -9,7 +9,7 @@ duoshuo: belm
 cnzz: 3003688
 weibo: belmeng
 github: belm
-pygments: true
+highlighter: true
 safe: true
 paginate: 20
 about: "这里是 belm 的个人博客，创建于 2009 年。开始使用了WordProess；2015年1月迁移到 Jekyll @ GitHub。<br /><br />拥有终身学习的心态，在学习中享受智慧带给我们的快乐"
