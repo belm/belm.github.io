@@ -9,5 +9,9 @@ github_username:  belm@vip.qq.com
 
 # Build settings
 markdown: kramdown
-source:      _source
-destination: _deploy
+
+#source:      _source
+#destination: _deploy
+
+encoding:   utf-8
+timezone:   Asia/Shanghai
