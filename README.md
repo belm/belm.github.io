@@ -60,14 +60,19 @@
 
 #gem国内安装失败
 ##使用淘宝RubyGems镜像 
-* 网址：https://ruby.taobao.org/
-* gem sources --remove https://rubygems.org/
-* gem sources -a https://ruby.taobao.org/
-* gem sources -l
+######网址：https://ruby.taobao.org/
+
+```
+gem sources --remove https://rubygems.org/
+gem sources -a https://ruby.taobao.org/
+gem sources -l
+```
 
 ##CocoaPods pod repo
-* pod repo remove master
-* pod repo add master https://gitcafe.com/akuandev/Specs.git
-* pod repo update
+```
+pod repo remove master
+pod repo add master https://gitcafe.com/akuandev/Specs.git
+pod repo update
+```
 
 
