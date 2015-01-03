@@ -1,17 +1,15 @@
-# Site settings
-title: 在路上的技术笔记
+markdown: rdiscount
+permalink: /:title/
+url: http://www.belmeng.com
+name: belmeng
+author: belm
+qq: 394356779
 email: belm@vip.qq.com
-description: > # 永远不要停止学习，因为你的竞争对手永远不会
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://www.belmeng.com" # the base hostname & protocol for your site
-twitter_username: beylm
-github_username:  belm@vip.qq.com
-
-# Build settings
-markdown: kramdown
-
-#source:      _source
-#destination: _deploy
-
-encoding:   utf-8
-timezone:   Asia/Shanghai
+duoshuo: belm
+cnzz: 3003688
+weibo: belmeng
+github: belm
+pygments: true
+safe: true
+paginate: 20
+about: "这里是 belm 的个人博客，创建于 2009 年。开始使用了WordProess；2015年1月迁移到 Jekyll @ GitHub。<br /><br />这里包含了部分个人的“折腾”过程、结论和成果，切换到分类模可以更快地找到感兴趣的内容，欢迎观赏、建议、拍砖……"
