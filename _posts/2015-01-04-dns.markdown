@@ -1,0 +1,11 @@
+---
+layout: post
+title: "dns"
+date:   2015-01-04 15:16:01
+categories: study update
+tags: dns
+---
+
++ 阿里巴巴DNS：223.5.5.5和223.6.6.6
++ 百度DNS：180.76.76.76
++ Google DNS：8.8.8.8和8.8.4.4
