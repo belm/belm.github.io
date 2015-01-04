@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "things"
-date:   2015-01-04 21:37:01
-categories:study update
-tags:gtd
+date: 2015-01-04 21:37:01
+categories: study update
+tags: gtd
 ---
 
 things是个不错的GTD工具，界面简洁明了，iphone和mac两个平台都支持，可惜Things Cloud国内被墙了，不能实现多个终端的同步，还是用OmniFocus吧，能很方便的同步。
