@@ -1,0 +1,141 @@
+---
+layout: post
+title: "vpn pptp"
+date: Sun Jan 11 15:33:26 2015
+categories: study update
+tags: github
+---
+
+周末研究了pptp和shadowsocks服务的搭建，shadowsocks搭建起来比较简单。
+
+##shadowsocks
+
+Github主页:
+
+    https://github.com/shadowsocks/shadowsocks   
+
+#Debian / Ubuntu:
+    apt-get install -y python-pip  && pip install shadowsocks
+
+#CentOS:
+    yum install python-setuptools && easy_install pip
+    pip install shadowsocks
+
+启动服务:
+
+    ssserver -p 8000 -k password -m rc4-md5 -d start
+
+关闭服务：
+
+    ssserver -p 8000 -k password -m rc4-md5 -d stop
+
+启动完成后，使用shadowsocks客户端连接即可，很方便，搭建起来也很快捷，对应的客户端在shadowsocks的github主页上面可以找到。
+
+##pptp
+
+安装步骤参考:
+
+    http://www.zhihu.com/question/20113381
+
+1) 安装pptpd（VPN服务器）和ufw（防火墙）
+
+    sudo apt-get install pptpd ufw
+
+2)修改ufw规则
+
+    sudo ufw allow 22
+    sudo ufw allow 1723
+    sudo ufw enable
+
+3)编辑pptpd选项
+
+    sudo vim /etc/ppp/pptpd-options
+
+打开文件后，找到以下三行注释掉
+
+    refuse-pap
+    refuse-chap
+    refuse-mschap
+
+之后在最后的地方添加如下信息
+
+    ms-dns 8.8.8.8
+    ms-dns 8.8.4.4
+
+4) 编辑IP信息以及客户端IP地址范围
+
+    sudo vim /etc/pptpd.conf
+
+会打开一个文件，然后在最后添加：
+
+    localip 178.62.122.180 （这里改为你自己的VPS的ip地址）
+    remoteip 10.99.99.100-199 （这里不需要改动）
+
+5)添加VPN用户登录信息，就是你登陆VPN的时候使用的用户名密码
+
+    sudo vim /etc/ppp/chap-secrets
+
+按照以下模式添加一个用户账号
+
+    [Username] [Service] [Password] [Allowed IP Address]
+
+例如,添加一个 用户名为pptpvpn，密码为fBRucTiXQtkr的vpn账号，可以创建多个，一行一个用户。
+
+    pptpvpn pptpd fBRucTiXQtkr *
+
+6)重启pptpd
+
+    sudo /etc/init.d/pptpd restart
+
+7)编辑系统设置
+
+    sudo vim /etc/sysctl.conf
+
+去掉下面一行的注释，改完后为：
+
+    net.ipv4.ip_forward=1
+
+重新加载系统设置
+
+    sudo sysctl -p
+
+8)修改ufw防火墙设置
+
+    sudo vim /etc/default/ufw
+
+    DEFAULT_FORWARD_POLICY = "DROP"
+
+改为：
+
+    DEFAULT_FORWARD_POLICY = "ACCEPT"
+
+9)继续修改ufw防火墙设置
+
+    sudo vim /etc/ufw/before.rules
+
+在文本最开始处复制添加如下内容:
+
+    # NAT table rules
+    *nat
+    :POSTROUTING ACCEPT [0:0]
+    # Allow forward traffic to eth0
+    -A POSTROUTING -s 10.99.99.0/24 -o eth0 -j MASQUERADE
+    # Process the NAT table rules
+    COMMIT
+
+10)重启防火墙
+
+    sudo ufw disable && sudo ufw enable
+
+更新：这里可能会看到一条Error信息：
+ERROR: problem running ufw-init
+
+如果出现这个情况，在你确保没输入错误的命令时，请输入一下命令：
+
+    ufw --force enable
+
+
+
+
+
+
