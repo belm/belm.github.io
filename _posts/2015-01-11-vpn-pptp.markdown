@@ -8,16 +8,16 @@ tags: github
 
 周末研究了pptp和shadowsocks服务的搭建，shadowsocks搭建起来比较简单。
 
-##shadowsocks
+#shadowsocks
 
 Github主页:
 
     https://github.com/shadowsocks/shadowsocks   
 
-#Debian / Ubuntu:
+##Debian / Ubuntu
     apt-get install -y python-pip  && pip install shadowsocks
 
-#CentOS:
+##Centos:
     yum install python-setuptools && easy_install pip
     pip install shadowsocks
 
@@ -31,7 +31,7 @@ Github主页:
 
 启动完成后，使用shadowsocks客户端连接即可，很方便，搭建起来也很快捷，对应的客户端在shadowsocks的github主页上面可以找到。
 
-##pptp
+#pptp
 
 安装步骤参考:
 
