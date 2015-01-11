@@ -9,7 +9,9 @@ github上面有很多优质的资源，但时间久了，整个项目会很大�
 
 比如下载:
 
-https://github.com/belm/belm.github.io/blob/master/_posts/2015-01-04-dns.markdown这个md文件，在命令行执行
+https://github.com/belm/belm.github.io/blob/master/_posts/2015-01-04-dns.markdown
+
+这个md文件，在命令行执行
 
     wget https://github.com/belm/belm.github.io/raw/master/_posts/2015-01-04-dns.markdown
 
