@@ -4,6 +4,7 @@ title: "mac vmware ubuntu shared folder"
 date: Thu Jan 22 13:06:07 2015
 categories: study update
 tags: vmware ubuntu shared floder
+---
 
 mac上在VMware Fusion虚拟机里面装了个ubuntu,/mnt/hgfs怎么尝试都看不到mac共享的目录，网上找了各种方法，重启了N次。
 
